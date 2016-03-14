@@ -65,38 +65,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if event.type == NSEventType.KeyDown {
                     for command in self!.commands {
                         if ((event.modifierFlags.rawValue & NSEventModifierFlags.DeviceIndependentModifierFlagsMask.rawValue) == command.mask) {
-                            if (event.charactersIgnoringModifiers == nil || event.charactersIgnoringModifiers!.lowercaseString != command.character.lowercaseString) {
-                                return
-                            }
-                            
-                            // copy
-                            let pasteboard = NSPasteboard.generalPasteboard()
-                            let oldContent = pasteboard.save()
-                            
-                            // new value in pasteboard
-                            do {
-                                let output = try shell(command.commandToExecute)
-                                pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
-                                pasteboard.setString(output, forType: NSPasteboardTypeString)
+                            if (!(event.charactersIgnoringModifiers == nil || event.charactersIgnoringModifiers!.lowercaseString != command.character.lowercaseString)) {
+                                // copy
+                                let pasteboard = NSPasteboard.generalPasteboard()
+                                let oldContent = pasteboard.save()
                                 
-                                // paste
-                                let key = CGKeyCode(9) //v
-                                let source = CGEventSourceCreate(.CombinedSessionState)
-                                let keyDown = CGEventCreateKeyboardEvent(source, key, true)
-                                CGEventSetFlags(keyDown, .MaskCommand)
-                                let keyUp = CGEventCreateKeyboardEvent(source, key, false)
-                                
-                                CGEventPost(CGEventTapLocation.CGHIDEventTap, keyDown)
-                                CGEventPost(CGEventTapLocation.CGHIDEventTap, keyUp)
-                                
-                                delay(0.1, closure: { () -> () in
-                                    pasteboard.restore(oldContent)
-                                })
-                            } catch let error as NSError {
-                                let alert = NSAlert()
-                                alert.addButtonWithTitle("OK")
-                                alert.messageText = error.localizedDescription + error.localizedFailureReason!
-                                alert.runModal()
+                                // new value in pasteboard
+                                do {
+                                    let output = try shell(command.commandToExecute)
+                                    pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
+                                    pasteboard.setString(output, forType: NSPasteboardTypeString)
+                                    
+                                    // paste
+                                    let key = CGKeyCode(9) //v
+                                    let source = CGEventSourceCreate(.CombinedSessionState)
+                                    let keyDown = CGEventCreateKeyboardEvent(source, key, true)
+                                    CGEventSetFlags(keyDown, .MaskCommand)
+                                    let keyUp = CGEventCreateKeyboardEvent(source, key, false)
+                                    
+                                    CGEventPost(CGEventTapLocation.CGHIDEventTap, keyDown)
+                                    CGEventPost(CGEventTapLocation.CGHIDEventTap, keyUp)
+                                    
+                                    delay(0.1, closure: { () -> () in
+                                        pasteboard.restore(oldContent)
+                                    })
+                                } catch let error as NSError {
+                                    let alert = NSAlert()
+                                    alert.addButtonWithTitle("OK")
+                                    alert.messageText = error.localizedDescription + error.localizedFailureReason!
+                                    alert.runModal()
+                                }
                             }
                         }
                     }

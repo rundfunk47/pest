@@ -58,10 +58,7 @@ class Command : NSObject, NSCoding {
         if let savedData = defaults.objectForKey("savedArray") as? NSData {
             let commands = NSKeyedUnarchiver.unarchiveObjectWithData(savedData) as? [Command]
             if (commands != nil) {
-                return commands!.sort({
-                    (lhs: Command, rhs: Command) -> Bool in
-                    return lhs.date < rhs.date
-                })
+                return commands!.sort({$0.date < $1.date})
             }
         }
         return [Command]()
@@ -102,7 +99,8 @@ class Command : NSObject, NSCoding {
             savedCommands.removeAtIndex(indexToRemove!)
         }
         
-        savedCommands.append(self)
+        savedCommands.insertSorted(self, isOrderedBefore: {$0.date < $1.date})
+        
         let savedData = NSKeyedArchiver.archivedDataWithRootObject(savedCommands)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(savedData, forKey: "savedArray")

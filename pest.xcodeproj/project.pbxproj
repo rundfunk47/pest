@@ -20,6 +20,7 @@
 		F31B2B6E1C9731A300A53B7B /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F31B2B6D1C9731A300A53B7B /* icon@2x.png */; };
 		F31B2B701C97341200A53B7B /* Startup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31B2B6F1C97341200A53B7B /* Startup.swift */; };
 		F371DCD51C95F60A00B747BA /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */; };
+		F3F254B31C9766C1008E036F /* Array+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F254B21C9766C1008E036F /* Array+Sort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F31B2B6D1C9731A300A53B7B /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		F31B2B6F1C97341200A53B7B /* Startup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startup.swift; sourceTree = "<group>"; };
 		F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparable.swift"; sourceTree = "<group>"; };
+		F3F254B21C9766C1008E036F /* Array+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Sort.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				F31589E31C7A18B1000BB7D8 /* UsefulMethods.swift */,
 				F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */,
 				F31B2B6F1C97341200A53B7B /* Startup.swift */,
+				F3F254B21C9766C1008E036F /* Array+Sort.swift */,
 			);
 			path = pest;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				F31B2B701C97341200A53B7B /* Startup.swift in Sources */,
 				F31589B51C7A1621000BB7D8 /* AppDelegate.swift in Sources */,
 				F31589E61C7A1E1D000BB7D8 /* MainWindow.swift in Sources */,
+				F3F254B31C9766C1008E036F /* Array+Sort.swift in Sources */,
 				F31589E41C7A18B1000BB7D8 /* UsefulMethods.swift in Sources */,
 				F31589E01C7A1873000BB7D8 /* Command.swift in Sources */,
 			);
