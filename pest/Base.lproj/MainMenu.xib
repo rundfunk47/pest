@@ -15,6 +15,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="pest" customModuleProvider="target">
             <connections>
                 <outlet property="statusMenu" destination="CDt-HN-zfi" id="exf-vV-QjC"/>
+                <outlet property="toggleStartup" destination="JKG-Sx-kOF" id="9x1-nL-NIX"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -206,6 +207,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="settingsClicked:" target="Voe-Tx-rLC" id="d71-aj-cGq"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Start pest at login" id="JKG-Sx-kOF">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleStartupClicked:" target="Voe-Tx-rLC" id="8Qv-ag-1Vn"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit" id="EJg-Ee-P64">

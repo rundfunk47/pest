@@ -21,7 +21,9 @@ func shell(args: String...) throws -> String {
     } else {
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         var output: String = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
-        output.removeAtIndex(output.endIndex.predecessor()) //remove last character (newline)
+        if (output.characters.count > 0) {
+            output.removeAtIndex(output.endIndex.predecessor()) //remove last character (newline)
+        }
         return output
     }
 }

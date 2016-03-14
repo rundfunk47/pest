@@ -22,7 +22,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func quitClicked(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(self)
     }
+    
+    func updateToggleStartupState() {
+        if (applicationIsInStartUpItems()) {
+            toggleStartup.state = NSOnState
+        } else {
+            toggleStartup.state = NSOffState
+        }
+    }
+    
+    @IBAction func toggleStartupClicked(sender: AnyObject) {
+        toggleLaunchAtStartup()
+        updateToggleStartupState()
+    }
 
+    @IBOutlet weak var toggleStartup: NSMenuItem!
+    
     var commands = Command.getSavedCommands()
     
     @objc private func editedCommands(notification: NSNotification){
@@ -30,6 +45,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        updateToggleStartupState()
+        
         if (commands.count == 0) {
             Command(name: "Date and Name", commandToExecute: "echo `date \"+%Y-%m-%d\"` `whoami`", character: "v", shift: true, control: false, alt: false, command: true, fn: false).save()
         }
