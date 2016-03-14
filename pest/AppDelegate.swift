@@ -87,7 +87,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let alert = NSAlert()
             alert.addButtonWithTitle("OK")
             alert.messageText = "In order to get pest to work, you need to allow it in System Preferences / Security & Privacy / Privacy / Accessibility."
-            alert.runModal()
+            let response = alert.runModal()
+            
+            if (response == 1000) {
+                NSApplication.sharedApplication().terminate(self)
+            }
         }
     }
 
