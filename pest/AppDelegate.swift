@@ -38,7 +38,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if (AXIsProcessTrusted()) {
             self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
-            self.statusItem?.image = NSImage(named: "icon.png")
+            let icon = NSImage(named: "icon")
+            icon?.template = true
+            self.statusItem?.image = icon
             self.statusItem?.menu = statusMenu
             
             NSEvent.addGlobalMonitorForEventsMatchingMask([NSEventMask.KeyDownMask, NSEventMask.FlagsChangedMask]) {

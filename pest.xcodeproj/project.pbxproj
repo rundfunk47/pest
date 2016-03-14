@@ -12,11 +12,12 @@
 		F31589BA1C7A1621000BB7D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31589B81C7A1621000BB7D8 /* MainMenu.xib */; };
 		F31589C51C7A1621000BB7D8 /* pestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589C41C7A1621000BB7D8 /* pestTests.swift */; };
 		F31589D01C7A1621000BB7D8 /* pestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589CF1C7A1621000BB7D8 /* pestUITests.swift */; };
-		F31589DE1C7A17A7000BB7D8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F31589DD1C7A17A7000BB7D8 /* icon.png */; };
 		F31589E01C7A1873000BB7D8 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589DF1C7A1873000BB7D8 /* Command.swift */; };
 		F31589E21C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589E11C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift */; };
 		F31589E41C7A18B1000BB7D8 /* UsefulMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589E31C7A18B1000BB7D8 /* UsefulMethods.swift */; };
 		F31589E61C7A1E1D000BB7D8 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589E51C7A1E1D000BB7D8 /* MainWindow.swift */; };
+		F31B2B6A1C97314000A53B7B /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F31B2B691C97314000A53B7B /* icon.png */; };
+		F31B2B6E1C9731A300A53B7B /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F31B2B6D1C9731A300A53B7B /* icon@2x.png */; };
 		F371DCD51C95F60A00B747BA /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,11 +50,12 @@
 		F31589CB1C7A1621000BB7D8 /* pestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31589CF1C7A1621000BB7D8 /* pestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pestUITests.swift; sourceTree = "<group>"; };
 		F31589D11C7A1621000BB7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F31589DD1C7A17A7000BB7D8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F31589DF1C7A1873000BB7D8 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		F31589E11C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPasteboard+SaveRestore.swift"; sourceTree = "<group>"; };
 		F31589E31C7A18B1000BB7D8 /* UsefulMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulMethods.swift; sourceTree = "<group>"; };
 		F31589E51C7A1E1D000BB7D8 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		F31B2B691C97314000A53B7B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		F31B2B6D1C9731A300A53B7B /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +110,8 @@
 				F31589B61C7A1621000BB7D8 /* Assets.xcassets */,
 				F31589B81C7A1621000BB7D8 /* MainMenu.xib */,
 				F31589BB1C7A1621000BB7D8 /* Info.plist */,
-				F31589DD1C7A17A7000BB7D8 /* icon.png */,
+				F31B2B691C97314000A53B7B /* icon.png */,
+				F31B2B6D1C9731A300A53B7B /* icon@2x.png */,
 				F31589DF1C7A1873000BB7D8 /* Command.swift */,
 				F31589E51C7A1E1D000BB7D8 /* MainWindow.swift */,
 				F31589B41C7A1621000BB7D8 /* AppDelegate.swift */,
@@ -242,8 +245,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F31589B71C7A1621000BB7D8 /* Assets.xcassets in Resources */,
-				F31589DE1C7A17A7000BB7D8 /* icon.png in Resources */,
+				F31B2B6E1C9731A300A53B7B /* icon@2x.png in Resources */,
 				F31589BA1C7A1621000BB7D8 /* MainMenu.xib in Resources */,
+				F31B2B6A1C97314000A53B7B /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
