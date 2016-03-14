@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F31589B51C7A1621000BB7D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589B41C7A1621000BB7D8 /* AppDelegate.swift */; };
+		F31589B71C7A1621000BB7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31589B61C7A1621000BB7D8 /* Assets.xcassets */; };
+		F31589BA1C7A1621000BB7D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31589B81C7A1621000BB7D8 /* MainMenu.xib */; };
+		F31589C51C7A1621000BB7D8 /* pestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589C41C7A1621000BB7D8 /* pestTests.swift */; };
+		F31589D01C7A1621000BB7D8 /* pestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589CF1C7A1621000BB7D8 /* pestUITests.swift */; };
+		F31589DE1C7A17A7000BB7D8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F31589DD1C7A17A7000BB7D8 /* icon.png */; };
+		F31589E01C7A1873000BB7D8 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589DF1C7A1873000BB7D8 /* Command.swift */; };
+		F31589E21C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589E11C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift */; };
+		F31589E41C7A18B1000BB7D8 /* UsefulMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589E31C7A18B1000BB7D8 /* UsefulMethods.swift */; };
+		F31589E61C7A1E1D000BB7D8 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31589E51C7A1E1D000BB7D8 /* MainWindow.swift */; };
+		F371DCD51C95F60A00B747BA /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F31589C11C7A1621000BB7D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F31589A91C7A1621000BB7D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F31589B01C7A1621000BB7D8;
+			remoteInfo = pest;
+		};
+		F31589CC1C7A1621000BB7D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F31589A91C7A1621000BB7D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F31589B01C7A1621000BB7D8;
+			remoteInfo = pest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F31589B11C7A1621000BB7D8 /* pest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31589B41C7A1621000BB7D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F31589B61C7A1621000BB7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F31589B91C7A1621000BB7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F31589BB1C7A1621000BB7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F31589C01C7A1621000BB7D8 /* pestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31589C41C7A1621000BB7D8 /* pestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pestTests.swift; sourceTree = "<group>"; };
+		F31589C61C7A1621000BB7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F31589CB1C7A1621000BB7D8 /* pestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31589CF1C7A1621000BB7D8 /* pestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pestUITests.swift; sourceTree = "<group>"; };
+		F31589D11C7A1621000BB7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F31589DD1C7A17A7000BB7D8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		F31589DF1C7A1873000BB7D8 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		F31589E11C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPasteboard+SaveRestore.swift"; sourceTree = "<group>"; };
+		F31589E31C7A18B1000BB7D8 /* UsefulMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsefulMethods.swift; sourceTree = "<group>"; };
+		F31589E51C7A1E1D000BB7D8 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparable.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F31589AE1C7A1621000BB7D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31589BD1C7A1621000BB7D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31589C81C7A1621000BB7D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F31589A81C7A1621000BB7D8 = {
+			isa = PBXGroup;
+			children = (
+				F31589B31C7A1621000BB7D8 /* pest */,
+				F31589C31C7A1621000BB7D8 /* pestTests */,
+				F31589CE1C7A1621000BB7D8 /* pestUITests */,
+				F31589B21C7A1621000BB7D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F31589B21C7A1621000BB7D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F31589B11C7A1621000BB7D8 /* pest.app */,
+				F31589C01C7A1621000BB7D8 /* pestTests.xctest */,
+				F31589CB1C7A1621000BB7D8 /* pestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F31589B31C7A1621000BB7D8 /* pest */ = {
+			isa = PBXGroup;
+			children = (
+				F31589B61C7A1621000BB7D8 /* Assets.xcassets */,
+				F31589B81C7A1621000BB7D8 /* MainMenu.xib */,
+				F31589BB1C7A1621000BB7D8 /* Info.plist */,
+				F31589DD1C7A17A7000BB7D8 /* icon.png */,
+				F31589DF1C7A1873000BB7D8 /* Command.swift */,
+				F31589E51C7A1E1D000BB7D8 /* MainWindow.swift */,
+				F31589B41C7A1621000BB7D8 /* AppDelegate.swift */,
+				F31589E11C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift */,
+				F31589E31C7A18B1000BB7D8 /* UsefulMethods.swift */,
+				F371DCD41C95F60A00B747BA /* NSDate+Comparable.swift */,
+			);
+			path = pest;
+			sourceTree = "<group>";
+		};
+		F31589C31C7A1621000BB7D8 /* pestTests */ = {
+			isa = PBXGroup;
+			children = (
+				F31589C41C7A1621000BB7D8 /* pestTests.swift */,
+				F31589C61C7A1621000BB7D8 /* Info.plist */,
+			);
+			path = pestTests;
+			sourceTree = "<group>";
+		};
+		F31589CE1C7A1621000BB7D8 /* pestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F31589CF1C7A1621000BB7D8 /* pestUITests.swift */,
+				F31589D11C7A1621000BB7D8 /* Info.plist */,
+			);
+			path = pestUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F31589B01C7A1621000BB7D8 /* pest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F31589D41C7A1621000BB7D8 /* Build configuration list for PBXNativeTarget "pest" */;
+			buildPhases = (
+				F31589AD1C7A1621000BB7D8 /* Sources */,
+				F31589AE1C7A1621000BB7D8 /* Frameworks */,
+				F31589AF1C7A1621000BB7D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pest;
+			productName = pest;
+			productReference = F31589B11C7A1621000BB7D8 /* pest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F31589BF1C7A1621000BB7D8 /* pestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F31589D71C7A1621000BB7D8 /* Build configuration list for PBXNativeTarget "pestTests" */;
+			buildPhases = (
+				F31589BC1C7A1621000BB7D8 /* Sources */,
+				F31589BD1C7A1621000BB7D8 /* Frameworks */,
+				F31589BE1C7A1621000BB7D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F31589C21C7A1621000BB7D8 /* PBXTargetDependency */,
+			);
+			name = pestTests;
+			productName = pestTests;
+			productReference = F31589C01C7A1621000BB7D8 /* pestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F31589CA1C7A1621000BB7D8 /* pestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F31589DA1C7A1621000BB7D8 /* Build configuration list for PBXNativeTarget "pestUITests" */;
+			buildPhases = (
+				F31589C71C7A1621000BB7D8 /* Sources */,
+				F31589C81C7A1621000BB7D8 /* Frameworks */,
+				F31589C91C7A1621000BB7D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F31589CD1C7A1621000BB7D8 /* PBXTargetDependency */,
+			);
+			name = pestUITests;
+			productName = pestUITests;
+			productReference = F31589CB1C7A1621000BB7D8 /* pestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F31589A91C7A1621000BB7D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Narek M";
+				TargetAttributes = {
+					F31589B01C7A1621000BB7D8 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					F31589BF1C7A1621000BB7D8 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = F31589B01C7A1621000BB7D8;
+					};
+					F31589CA1C7A1621000BB7D8 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = F31589B01C7A1621000BB7D8;
+					};
+				};
+			};
+			buildConfigurationList = F31589AC1C7A1621000BB7D8 /* Build configuration list for PBXProject "pest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F31589A81C7A1621000BB7D8;
+			productRefGroup = F31589B21C7A1621000BB7D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F31589B01C7A1621000BB7D8 /* pest */,
+				F31589BF1C7A1621000BB7D8 /* pestTests */,
+				F31589CA1C7A1621000BB7D8 /* pestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F31589AF1C7A1621000BB7D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F31589B71C7A1621000BB7D8 /* Assets.xcassets in Resources */,
+				F31589DE1C7A17A7000BB7D8 /* icon.png in Resources */,
+				F31589BA1C7A1621000BB7D8 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31589BE1C7A1621000BB7D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31589C91C7A1621000BB7D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F31589AD1C7A1621000BB7D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F371DCD51C95F60A00B747BA /* NSDate+Comparable.swift in Sources */,
+				F31589E21C7A1898000BB7D8 /* NSPasteboard+SaveRestore.swift in Sources */,
+				F31589B51C7A1621000BB7D8 /* AppDelegate.swift in Sources */,
+				F31589E61C7A1E1D000BB7D8 /* MainWindow.swift in Sources */,
+				F31589E41C7A18B1000BB7D8 /* UsefulMethods.swift in Sources */,
+				F31589E01C7A1873000BB7D8 /* Command.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31589BC1C7A1621000BB7D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F31589C51C7A1621000BB7D8 /* pestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F31589C71C7A1621000BB7D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F31589D01C7A1621000BB7D8 /* pestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F31589C21C7A1621000BB7D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F31589B01C7A1621000BB7D8 /* pest */;
+			targetProxy = F31589C11C7A1621000BB7D8 /* PBXContainerItemProxy */;
+		};
+		F31589CD1C7A1621000BB7D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F31589B01C7A1621000BB7D8 /* pest */;
+			targetProxy = F31589CC1C7A1621000BB7D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F31589B81C7A1621000BB7D8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F31589B91C7A1621000BB7D8 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F31589D21C7A1621000BB7D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F31589D31C7A1621000BB7D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F31589D51C7A1621000BB7D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = pest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acab.pest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F31589D61C7A1621000BB7D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = pest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acab.pest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F31589D81C7A1621000BB7D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = pestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acab.pestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pest.app/Contents/MacOS/pest";
+			};
+			name = Debug;
+		};
+		F31589D91C7A1621000BB7D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = pestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acab.pestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pest.app/Contents/MacOS/pest";
+			};
+			name = Release;
+		};
+		F31589DB1C7A1621000BB7D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = pestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acab.pestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = pest;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F31589DC1C7A1621000BB7D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = pestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = acab.pestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = pest;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F31589AC1C7A1621000BB7D8 /* Build configuration list for PBXProject "pest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31589D21C7A1621000BB7D8 /* Debug */,
+				F31589D31C7A1621000BB7D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F31589D41C7A1621000BB7D8 /* Build configuration list for PBXNativeTarget "pest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31589D51C7A1621000BB7D8 /* Debug */,
+				F31589D61C7A1621000BB7D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F31589D71C7A1621000BB7D8 /* Build configuration list for PBXNativeTarget "pestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31589D81C7A1621000BB7D8 /* Debug */,
+				F31589D91C7A1621000BB7D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F31589DA1C7A1621000BB7D8 /* Build configuration list for PBXNativeTarget "pestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31589DB1C7A1621000BB7D8 /* Debug */,
+				F31589DC1C7A1621000BB7D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F31589A91C7A1621000BB7D8 /* Project object */;
+}
