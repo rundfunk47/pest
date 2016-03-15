@@ -49,6 +49,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if (commands.count == 0) {
             Command(name: "Date and Name", commandToExecute: "echo `date \"+%Y-%m-%d\"` `whoami`", character: "v", shift: true, control: false, alt: false, command: true, fn: false).save()
+            Command(name: "What is my IP", commandToExecute: "ifconfig en1 | awk '{ print $2}' | grep -E -o '([0-9]{1,3}[\\.]){3}[0-9]{1,3}'", character: "i", shift: false, control: false, alt: true, command: true, fn: false).save()
+            Command(name: "CBSG", commandToExecute: "curl -s http://cbsg.sourceforge.net/cgi-bin/live | grep -Eo '^<li>.*</li>' | sed -e 's/<li>\\(.*\\)<\\/li>/\\1/' | head -n 1", character: "s", shift: false, control: false, alt: true, command: true, fn: false).save()
+            Command(name: "External IP", commandToExecute: "dig +short myip.opendns.com @resolver1.opendns.com", character: "e", shift: false, control: false, alt: true, command: true, fn: false).save()
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "editedCommands:", name:"EditedCommands", object: nil)
