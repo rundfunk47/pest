@@ -12,14 +12,22 @@ func shell(args: String...) throws -> String {
     let task = NSTask()
     task.launchPath = "/bin/bash"
     task.arguments = ["-c"] + args
-    let pipe = NSPipe()
-    task.standardOutput = pipe
+    let stdout = NSPipe()
+    let stderr = NSPipe()
+    task.standardOutput = stdout
+    task.standardError = stderr
     task.launch()
     task.waitUntilExit()
     if (task.terminationStatus != 0) {
-        throw NSError(domain: "PestErrorDomain", code: Int(task.terminationStatus), userInfo: [NSLocalizedDescriptionKey: "Command exited with non zero exit code"])
+        let data = stderr.fileHandleForReading.readDataToEndOfFile()
+        var output: String = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+        if (output.characters.count > 0) {
+            output.removeAtIndex(output.endIndex.predecessor()) //remove last character (newline)
+        }
+
+        throw NSError(domain: "PestErrorDomain", code: Int(task.terminationStatus), userInfo: [NSLocalizedDescriptionKey: "Command exited with non zero exit code", NSLocalizedFailureReasonErrorKey: output])
     } else {
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let data = stdout.fileHandleForReading.readDataToEndOfFile()
         var output: String = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
         if (output.characters.count > 0) {
             output.removeAtIndex(output.endIndex.predecessor()) //remove last character (newline)

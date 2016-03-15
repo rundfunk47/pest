@@ -92,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                 } catch let error as NSError {
                                     let alert = NSAlert()
                                     alert.addButtonWithTitle("OK")
-                                    alert.messageText = error.localizedDescription + error.localizedFailureReason!
+                                    alert.messageText = error.localizedDescription + ": " + error.localizedFailureReason!
                                     alert.runModal()
                                 }
                             }
