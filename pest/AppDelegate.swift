@@ -13,6 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
     var statusItem: NSStatusItem?
+    var statusView: NSView?
+    var icon: NSImage?
     @IBOutlet weak var statusMenu: NSMenu!
     
     @IBAction func settingsClicked(sender: AnyObject) {
@@ -56,61 +58,89 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Command(name: "External IP", commandToExecute: "dig +short myip.opendns.com @resolver1.opendns.com", character: "e", shift: false, control: false, alt: true, command: true, fn: false).save()
         }
         
-        if (AXIsProcessTrusted()) {
-            self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
-            let icon = NSImage(named: "icon")
-            icon?.template = true
+        func setStatusbarIcon() {
+            if (self.icon == nil) {
+                icon = NSImage(named: "icon")
+                icon?.template = true
+            }
+            self.statusItem?.view = nil
             self.statusItem?.image = icon
             self.statusItem?.menu = statusMenu
+        }
+        
+        func setSpinner() {
+            if (self.statusView == nil) {
+                self.statusView = NSView(frame: NSMakeRect(0, 2, 18, 18))
+                let progressIndicator = NSProgressIndicator(frame: NSMakeRect(0, 2, 18, 18))
+                progressIndicator.style = NSProgressIndicatorStyle.SpinningStyle
+                progressIndicator.hidden = false
+                progressIndicator.usesThreadedAnimation = true
+                progressIndicator.indeterminate = true
+                progressIndicator.startAnimation(true)
+                self.statusView?.addSubview(progressIndicator)
+            }
             
-            NSEvent.addGlobalMonitorForEventsMatchingMask([NSEventMask.KeyDownMask, NSEventMask.FlagsChangedMask]) {
-                [weak self](event: NSEvent) -> Void in
-                if event.type == NSEventType.KeyDown {
-                    for command in self!.commands {
-                        if ((event.modifierFlags.rawValue & NSEventModifierFlags.DeviceIndependentModifierFlagsMask.rawValue) == command.mask) {
-                            if (!(event.charactersIgnoringModifiers == nil || event.charactersIgnoringModifiers!.lowercaseString != command.character.lowercaseString)) {
-                                // copy
-                                let pasteboard = NSPasteboard.generalPasteboard()
-                                let oldContent = pasteboard.save()
+            self.statusItem?.view = self.statusView
+        }
+        
+        if (!AXIsProcessTrusted()) {
+            let alert = NSAlert()
+            alert.addButtonWithTitle("OK")
+            alert.messageText = "In order to get pest to work, you need to allow it in System Preferences / Security & Privacy / Privacy / Accessibility."
+            alert.runModal()
+            NSApplication.sharedApplication().terminate(self)
+            return
+        }
+        
+        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+        setStatusbarIcon()
+        
+        NSEvent.addGlobalMonitorForEventsMatchingMask([NSEventMask.KeyDownMask, NSEventMask.FlagsChangedMask]) {
+            [weak self](event: NSEvent) -> Void in
+            if event.type == NSEventType.KeyDown {
+                for command in self!.commands {
+                    if ((event.modifierFlags.rawValue & NSEventModifierFlags.DeviceIndependentModifierFlagsMask.rawValue) == command.mask) {
+                        if (!(event.charactersIgnoringModifiers == nil || event.charactersIgnoringModifiers!.lowercaseString != command.character.lowercaseString)) {
+                            // copy
+                            let pasteboard = NSPasteboard.generalPasteboard()
+                            let oldContent = pasteboard.save()
+                            
+                            // new value in pasteboard
+                            do {
+                                setSpinner()
+                                let output = try shell(command.commandToExecute)
+                                setStatusbarIcon()
+                                let icon = NSImage(named: "icon")
+                                icon?.template = true
+                                self?.statusItem?.image = icon
+                                self?.statusItem?.menu = self?.statusMenu
                                 
-                                // new value in pasteboard
-                                do {
-                                    let output = try shell(command.commandToExecute)
-                                    pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
-                                    pasteboard.setString(output, forType: NSPasteboardTypeString)
-                                    
-                                    // paste
-                                    let key = CGKeyCode(9) //v
-                                    let source = CGEventSourceCreate(.CombinedSessionState)
-                                    let keyDown = CGEventCreateKeyboardEvent(source, key, true)
-                                    CGEventSetFlags(keyDown, .MaskCommand)
-                                    let keyUp = CGEventCreateKeyboardEvent(source, key, false)
-                                    
-                                    CGEventPost(CGEventTapLocation.CGHIDEventTap, keyDown)
-                                    CGEventPost(CGEventTapLocation.CGHIDEventTap, keyUp)
-                                    
-                                    delay(0.1, closure: { () -> () in
-                                        pasteboard.restore(oldContent)
-                                    })
-                                } catch let error as NSError {
-                                    let alert = NSAlert()
-                                    alert.addButtonWithTitle("OK")
-                                    alert.messageText = error.localizedDescription + ": " + error.localizedFailureReason!
-                                    alert.runModal()
-                                }
+                                pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
+                                pasteboard.setString(output, forType: NSPasteboardTypeString)
+                                
+                                // paste
+                                let key = CGKeyCode(9) //v
+                                let source = CGEventSourceCreate(.CombinedSessionState)
+                                let keyDown = CGEventCreateKeyboardEvent(source, key, true)
+                                CGEventSetFlags(keyDown, .MaskCommand)
+                                let keyUp = CGEventCreateKeyboardEvent(source, key, false)
+                                
+                                CGEventPost(CGEventTapLocation.CGHIDEventTap, keyDown)
+                                CGEventPost(CGEventTapLocation.CGHIDEventTap, keyUp)
+                                
+                                delay(0.1, closure: { () -> () in
+                                    pasteboard.restore(oldContent)
+                                })
+                            } catch let error as NSError {
+                                let alert = NSAlert()
+                                alert.addButtonWithTitle("OK")
+                                alert.messageText = error.localizedDescription + ": " + error.localizedFailureReason!
+                                setStatusbarIcon()
+                                alert.runModal()
                             }
                         }
                     }
                 }
-            }
-        } else {
-            let alert = NSAlert()
-            alert.addButtonWithTitle("OK")
-            alert.messageText = "In order to get pest to work, you need to allow it in System Preferences / Security & Privacy / Privacy / Accessibility."
-            let response = alert.runModal()
-            
-            if (response == 1000) {
-                NSApplication.sharedApplication().terminate(self)
             }
         }
     }
