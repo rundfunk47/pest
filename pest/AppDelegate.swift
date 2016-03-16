@@ -45,6 +45,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "editedCommands:", name:"EditedCommands", object: nil)
+        
         updateToggleStartupState()
         
         if (commands.count == 0) {
@@ -53,8 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Command(name: "CBSG", commandToExecute: "curl -s http://cbsg.sourceforge.net/cgi-bin/live | grep -Eo '^<li>.*</li>' | sed -e 's/<li>\\(.*\\)<\\/li>/\\1/' | head -n 1", character: "s", shift: false, control: false, alt: true, command: true, fn: false).save()
             Command(name: "External IP", commandToExecute: "dig +short myip.opendns.com @resolver1.opendns.com", character: "e", shift: false, control: false, alt: true, command: true, fn: false).save()
         }
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "editedCommands:", name:"EditedCommands", object: nil)
         
         if (AXIsProcessTrusted()) {
             self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
